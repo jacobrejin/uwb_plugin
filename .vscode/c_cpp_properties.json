@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                // "${workspaceFolder}/**",
+                "/usr/include/ignition/gazebo6/**",
+                "/usr/include/ignition/math6/**",
+                "/usr/include/ignition/plugin1/**",
+                "/usr/include/ignition/common4/**",
+                "/usr/include/ignition/msgs8/**",
+                "/usr/include/ignition/sdformat12/**",
+                "/usr/include/ignition/transport11/**",
+                "/usr/include/ignition/utils1/**",
+                "/usr/include/ignition/physics5/**",
+                "/usr/include/ignition/cmake2/**",
+                "/usr/include/ignition/rendering6",
+                "/usr/include/eigen3",
+
+                // ros includes
+                "/opt/ros/humble/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}
