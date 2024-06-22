@@ -351,6 +351,7 @@ ros2 launch uwb_system_plugin test_world.launch.py
 - [ ] Add support for multiple Tags
 - [ ] Add support for publishing orientation data if multiple tags are used
 - [ ] Add the link the ROS2 package to the repository for example in the readme file
+- [ ] Add a list of topics and services provided by the plugin (including the visualization markers for ROS and Gazebo)
 
 
 <hr style="border: 4px solid gray;">
