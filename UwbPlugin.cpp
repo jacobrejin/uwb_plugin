@@ -343,7 +343,7 @@ private:
         {   
             // clear the marker data list
             this->markerDataList.clear();
-            int markerId = 0;
+            int markerId = 1;
             // do ray casting for each beacon entity position and the tag position(hence usnig the tag world pose)
             // use tagparentpose if you want the raycasting wrt to the parent entity of the tag entity(robot model)
             // is using tag world pose, then the raycasting is wrt to the world frame, and we will need the frames and tf to be correct to be able 
@@ -609,12 +609,12 @@ private:
 
 
         // set the gazebo origin usng marker 
-        SetAxisMarkers(ignition::math::Pose3d::Zero,10);
+        SetAxisMarkers(ignition::math::Pose3d::Zero,100);
            
         // set the axsis marker arows for the datum
         // read the dataum pose from the sdf if the Set_dataum flag is true
         if (this->Set_dataum){
-            SetAxisMarkers(this->datumPose,20);
+            SetAxisMarkers(this->datumPose,200);
             // this->datumPos
             // print setting the axis markers
             std::cout << "[UWB Plugin] Setting the Axis Markers" << std::endl;
@@ -638,6 +638,10 @@ private:
         ignition::msgs::Marker marker;
         marker.set_ns("uwb");
         marker.set_id(markerData.markerId);
+
+        // use the marker data struct to print the marker ID and the intersection name
+        std::cout << "[UWB Plugin] Marker ID: " << markerData.markerId << std::endl;
+        std::cout << "[UWB Plugin] Intersection Name: " << markerData.intersectionName << std::endl;
 
         // no need to set the frane ID, as ther is not way yo bridge the marker message to ROS, not implmented by the team yet.
         // // marker.mutable_header()->set_data("frame_id", "world");  // Set the frame ID here
