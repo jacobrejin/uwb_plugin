@@ -216,6 +216,9 @@ private:
                 // check if the intersection name the beaconprefix in its name
                 // createa a boolean variable for flagging
                 bool isBeacon = markerData.intersectionName.find(this->beaconPrefix) != std::string::npos;
+
+                // print beacon entity id and the intersection name in the same line
+                std::cout << "[UWB Plugin] Beacon Entity ID: " << beaconEntity << " Intersection Name: " << markerData.intersectionName << std::endl;
     
                 if (markerData.hasIntersection && !isBeacon)
                 {   
@@ -288,6 +291,9 @@ private:
         // run only if the elapsed time is greater than the update period
         if (elapsed >= this->updatePeriod)
         {
+
+            // print tis working
+            // std::cout << "[UWB Plugin] Working" << std::endl;
             this->lastUpdateTime = simTime_converted;
 
 
@@ -318,6 +324,10 @@ private:
     private: void PerformRenderingOperations()
     {   
 
+        // print performaing rendering operations
+        // std::cout << "[UWB Plugin] Performing Rendering Operations" << std::endl;
+
+
         if (nullptr == this->scene)
         {
             this->FindScene();
@@ -341,6 +351,8 @@ private:
 
         if (this->performRenderingOperations_flag)
         {   
+
+           
             // clear the marker data list
             this->markerDataList.clear();
             int markerId = 0;
@@ -369,7 +381,7 @@ private:
                     // use Id to get the visual name
                     const auto intersectionNameComp = this->scene->VisualById(intersectionEntityID)->Name();
                     // print the intersection name
-                    // std::cout << "[UWB Plugin] Intersection Name: " << intersectionNameComp << std::endl;
+                    std::cout << "[UWB Plugin] Intersection Name: " << intersectionNameComp << std::endl;
                     markerDataList.push_back({tag_worldPose_offset, intersectionPoint, intersectionNameComp, true, markerId});
                     // markerDataList.push_back({this->tag_worldPose.Pos(), intersectionPoint, intersectionNameComp, true, markerId});
                 }

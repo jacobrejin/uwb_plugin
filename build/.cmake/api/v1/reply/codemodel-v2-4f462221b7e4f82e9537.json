@@ -68,8 +68,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/rejin/Desktop/plugin_test/dev_env/uwb_plugin/build",
-		"source" : "/home/rejin/Desktop/plugin_test/dev_env/uwb_plugin"
+		"build" : "/home/rejin/Desktop/irp/plugin_test/dev_env/uwb_plugin/build",
+		"source" : "/home/rejin/Desktop/irp/plugin_test/dev_env/uwb_plugin"
 	},
 	"version" : 
 	{
