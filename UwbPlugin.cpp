@@ -640,8 +640,8 @@ private:
         marker.set_id(markerData.markerId);
 
         // use the marker data struct to print the marker ID and the intersection name
-        std::cout << "[UWB Plugin] Marker ID: " << markerData.markerId << std::endl;
-        std::cout << "[UWB Plugin] Intersection Name: " << markerData.intersectionName << std::endl;
+        // std::cout << "[UWB Plugin] Marker ID: " << markerData.markerId << std::endl;
+        // std::cout << "[UWB Plugin] Intersection Name: " << markerData.intersectionName << std::endl;
 
         // no need to set the frane ID, as ther is not way yo bridge the marker message to ROS, not implmented by the team yet.
         // // marker.mutable_header()->set_data("frame_id", "world");  // Set the frame ID here
