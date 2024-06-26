@@ -5,6 +5,8 @@ cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
 
 
 find_package(ignition-cmake2 REQUIRED)
+# Find the custom Ignition Rendering library
+find_package(ignition-rendering6 6.6.4 EXACT REQUIRED)
 
 project(uwb_plugin_test_1)
 
@@ -16,8 +18,6 @@ set(IGN_GAZEBO_VER ${ignition-gazebo6_VERSION_MAJOR})
 
 
 
-# Find the custom Ignition Rendering library
-find_package(ignition-rendering6 6.6.3 REQUIRED)
 # Print the paths of the found package
 if (ignition-rendering6_FOUND)
     message(STATUS "Found Ignition Rendering library:")

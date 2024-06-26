@@ -224,7 +224,7 @@ private:
                 bool isBeacon = markerData.intersectionName.find(this->beaconPrefix) != std::string::npos;
 
                 // print beacon entity id and the intersection name in the same line
-                std::cout << "[UWB Plugin] Beacon Entity ID: " << beaconEntity << " Intersection Name: " << markerData.intersectionName << std::endl;
+                // std::cout << "[UWB Plugin] Beacon Entity ID: " << beaconEntity << " Intersection Name: " << markerData.intersectionName << std::endl;
     
                 if (markerData.hasIntersection && !isBeacon)
                 {   
@@ -387,7 +387,7 @@ private:
                     // use Id to get the visual name
                     const auto intersectionNameComp = this->scene->VisualById(intersectionEntityID)->Name();
                     // print the intersection name
-                    std::cout << "[UWB Plugin] Intersection Name: " << intersectionNameComp << std::endl;
+                    // std::cout << "[UWB Plugin] Intersection Name: " << intersectionNameComp << std::endl;
                     markerDataList.push_back({tag_worldPose_offset, intersectionPoint, intersectionNameComp, true, markerId});
                     // markerDataList.push_back({this->tag_worldPose.Pos(), intersectionPoint, intersectionNameComp, true, markerId});
                 }
