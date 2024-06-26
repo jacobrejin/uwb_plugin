@@ -11,6 +11,14 @@ CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
 
+
+# Ignore the entire build folder
+/build/
+
+# Include all .so files in the build folder
+!/build/**/*.so
+
+
 # Prerequisites
 *.d
 
