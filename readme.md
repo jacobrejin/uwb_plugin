@@ -364,6 +364,70 @@ ros2 launch uwb_system_plugin test_world.launch.py
 
 Please report any issues or bugs you encounter through the [GitHub Issues](https://github.com/yourusername/uwb_system_plugin/issues) page. When reporting issues, include detailed information and steps to reproduce the problem.
 
+
+### 1. Ray Marker Not Cleared
+  The Issue was that the marker created for visualization of the ray were not being cleare. Actually the markers were set to tbe Modified but for some reason the marker ID 0 was not being modofied, instead a new marker was cerated everytime. A quick fix was to not start from index 0, instead start from index 1. This fixed the issue. But the root cause of the issue is still not known.
+
+<hr>
+
+### 2. Ray Query - No Intersection
+  The issue being faced was that the ray query was not returning any intersections with objects in between. with visual objects if the tag was in the oriented bounding box of the visual object. This is not an issue but more of a feature in ogre2 which rendering engine plugin, which is being used in the backend. 
+
+  The code OGRE2 does intersection check in 2 phases, first it checks intersection with the oriented boxed. If intersections are found a second mesh based check is conducted. If the first check return the distacne as less than 0, which would be the case of the tag is inside the oriented bounding box, then the second check is not conducted. This was the reason why the ray query was not returning any intersections.
+
+  There are 2 ways to fix this issue.
+  1. Createa a custom rayquery class, with the required changes (remove the distance check)
+  2. Make changes to the igntion rendeering library, and create a new plugin and use that.
+
+  First method would have been ideal if implemented, but i couldn't get the cmake file to be setup and linked properly which lead to the issue of `unknown symbols`
+
+  So I had to implement the second method, which involves create a clone of the igntion rendering 6 library and editing the source and building from source. You can follow the below link to learn more about how to build the rendering plugin from source
+
+  [Installtion Instruciton](https://gazebosim.org/api/rendering/6/installation.html)
+
+  above link uses the default ignition rendering library. But we need to use the modified verion with reevant chanegs being made to the rayquery class. So i created a fork of the repository and made the necessary changes over there. Below is the link to the forked and modified `Igntion rendering 6` repo. 
+
+  [igntion rendering 6-Modified](https://github.com/jacobrejin/gz-rendering/tree/ign-rendering6)
+
+  You can still use the same install instruction, just make sure you clone the modified repo instead of the default one.
+
+  Provided we are using a modified rendering plugin/engine (library) we need to make some improtant changes to all the other projects which is going to load this library. The changes are as follows.
+    1. we need to set the name of the rendering engine in the igntion gazebo launch command. (when using robots this is usualy done in teh launch file using the ros lauch node for igntion gazebo)
+    
+    ```python
+    world_cfg = LaunchConfiguration("world")
+      declare_world_arg = DeclareLaunchArgument(
+          "world",
+          default_value=[
+              "-r ",
+              PathJoinSubstitution(
+                  [
+                      FindPackageShare("plugin_test"),
+                      "world",
+                      "world.sdf",
+                  ],
+              ),
+              " --render-engine ogre2"
+              # add verbose flag to see all output
+              " --verbose=4",
+              # add sim time flag to use sim time
+              # " --use_sim_time",
+          ],
+          description="SDF world file",
+      )
+    ``` 
+
+    2. We need to set the path to the rendering engine in the environment variable `IGN_RENDERING_PLUGIN_PATH`. This is required for the plugin to find the rendering engine. This can be done using the following command.
+
+    ```python
+      AppendEnvironmentVariable(name='IGN_GAZEBO_RENDER_ENGINE_PATH', value = "/usr/local/lib"),
+    ```
+
+  Although the documentaion is not clear,  I set the path to folder where the .so file was created. Also the name of the generated shared library (.so) file is a bit confusing. Below link mentiones how the ignition rendering will onlhy look for shared plugin libraries in certain folders. 
+  https://gazebosim.org/api/gazebo/6/resources.html. 
+
+
+
 <hr style="border: 4px solid gray;">
 <br>
 <br>
