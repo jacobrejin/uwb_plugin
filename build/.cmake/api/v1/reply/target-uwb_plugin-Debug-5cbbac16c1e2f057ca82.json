@@ -26,19 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 29,
+				"line" : 44,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 34,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 21,
+				"line" : 36,
 				"parent" : 0
 			}
 		]
@@ -62,6 +62,9 @@
 				{
 					"backtrace" : 2,
 					"fragment" : "-fPIC"
+				},
+				{
+					"fragment" : "-std=gnu++17"
 				}
 			],
 			"defines" : 
@@ -350,7 +353,7 @@
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "/usr/include/ignition/rendering6"
+					"path" : "/usr/local/include/ignition/rendering6"
 				},
 				{
 					"backtrace" : 2,
@@ -405,7 +408,7 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/opt/ros/humble/lib",
+				"fragment" : "-Wl,-rpath,/opt/ros/humble/lib:/usr/local/lib",
 				"role" : "libraries"
 			},
 			{
@@ -9083,7 +9086,7 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libignition-rendering6.so.6.6.3",
+				"fragment" : "/usr/local/lib/libignition-rendering6.so.6.6.4",
 				"role" : "libraries"
 			},
 			{

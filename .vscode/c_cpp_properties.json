@@ -14,7 +14,8 @@
                 "/usr/include/ignition/utils1/**",
                 "/usr/include/ignition/physics5/**",
                 "/usr/include/ignition/cmake2/**",
-                "/usr/include/ignition/rendering6",
+                "/usr/include/ignition/rendering6/**",
+                "/usr/include/OGRE-Next/**",
                 "/usr/include/eigen3",
 
                 // ros includes

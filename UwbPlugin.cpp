@@ -43,6 +43,12 @@
 #include <ignition/gazebo/Util.hh>
 #include <ignition/gazebo/SdfEntityCreator.hh>
 
+
+
+
+
+
+
 using namespace ignition;
 using namespace gazebo;
 using namespace std::literals::chrono_literals;
@@ -403,6 +409,19 @@ private:
         // update the time
         this->lastUpdate = this->simTime;
     }
+
+
+
+    
+
+
+
+
+
+
+
+
+
 
     //! [findScene]
     void FindScene()

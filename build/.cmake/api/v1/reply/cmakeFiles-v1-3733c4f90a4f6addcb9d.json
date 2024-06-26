@@ -1614,11 +1614,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/ignition-rendering6/ignition-rendering6-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/ignition-rendering6/ignition-rendering6-config.cmake"
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-config.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -1892,11 +1892,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/ignition-rendering6/ignition-rendering6-targets.cmake"
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-targets.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/ignition-rendering6/ignition-rendering6-targets-relwithdebinfo.cmake"
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-targets-relwithdebinfo.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -2493,11 +2493,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/ignition-rendering6/ignition-rendering6-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/ignition-rendering6/ignition-rendering6-config.cmake"
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-config.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -3037,11 +3037,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/ignition-rendering6/ignition-rendering6-config-version.cmake"
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/usr/lib/x86_64-linux-gnu/cmake/ignition-rendering6/ignition-rendering6-config.cmake"
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-config.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -3132,6 +3132,14 @@
 		{
 			"isExternal" : true,
 			"path" : "/usr/lib/x86_64-linux-gnu/cmake/ignition-gazebo6/ignition-gazebo6-targets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/local/lib/cmake/ignition-rendering6/ignition-rendering6-config.cmake"
 		},
 		{
 			"isExternal" : true,
