@@ -720,17 +720,17 @@ private:
 
         if (color == "green")
         {
-            ignition::msgs::Set(req.mutable_material()->mutable_ambient(), ignition::math::Color(0.0, 1.0, 0.0, 1.0));
-            ignition::msgs::Set(req.mutable_material()->mutable_diffuse(), ignition::math::Color(0.0, 1.0, 0.0, 1.0));
-            ignition::msgs::Set(req.mutable_material()->mutable_specular(), ignition::math::Color(0.0, 0.0, 0.0, 1.0));
-            ignition::msgs::Set(req.mutable_material()->mutable_emissive(), ignition::math::Color(0.0, 0.0, 0.0, 1.0));
+            ignition::msgs::Set(req.mutable_material()->mutable_ambient(), ignition::math::Color(0.0, 1.0, 0.0, 0.1));
+            ignition::msgs::Set(req.mutable_material()->mutable_diffuse(), ignition::math::Color(0.0, 1.0, 0.0, 0.1));
+            ignition::msgs::Set(req.mutable_material()->mutable_specular(), ignition::math::Color(0.0, 0.0, 0.0, 0.1));
+            ignition::msgs::Set(req.mutable_material()->mutable_emissive(), ignition::math::Color(0.0, 0.0, 0.0, 0.1));
         }
         else if (color == "red")
         {
-            ignition::msgs::Set(req.mutable_material()->mutable_ambient(), ignition::math::Color(1.0, 0.0, 0.0, 1.0));
-            ignition::msgs::Set(req.mutable_material()->mutable_diffuse(), ignition::math::Color(1.0, 0.0, 0.0, 1.0));
-            ignition::msgs::Set(req.mutable_material()->mutable_specular(), ignition::math::Color(0.0, 0.0, 0.0, 1.0));
-            ignition::msgs::Set(req.mutable_material()->mutable_emissive(), ignition::math::Color(0.0, 0.0, 0.0, 1.0));
+            ignition::msgs::Set(req.mutable_material()->mutable_ambient(), ignition::math::Color(1.0, 0.0, 0.0, 0.1));
+            ignition::msgs::Set(req.mutable_material()->mutable_diffuse(), ignition::math::Color(1.0, 0.0, 0.0, 0.1));
+            ignition::msgs::Set(req.mutable_material()->mutable_specular(), ignition::math::Color(0.0, 0.0, 0.0, 0.1));
+            ignition::msgs::Set(req.mutable_material()->mutable_emissive(), ignition::math::Color(0.0, 0.0, 0.0, 0.1));
         }
 
         std::string service = "/world/default/visual_config";
