@@ -278,8 +278,9 @@ THere are 2 examples provided. one is the `test_world` file provided with this r
 
 Second example demonstrates how to attach the plugin to a robot urdf file. In order to test the plugin, you can use the provided ROS2 package. Which has a test world with the becons and the tag is being attached to a panther robot. Below is the link to the repository.
 
+https://github.com/jacobrejin/uwb_plugin_example_package
 
--------------------------Add link-------------------------
+<br>
 
 <p align="center">
   <img src="readme_images/test_package.png" alt="Image Description" width="500">

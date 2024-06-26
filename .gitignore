@@ -12,12 +12,11 @@ _deps
 CMakeUserPresets.json
 
 
-# Ignore the entire build folder
-/build/
+# Ignore everything in the build folder
+/build/*
 
-# Include all .so files in the build folder
-!/build/**/*.so
-
+# But not .so files directly inside the build folder
+!/build/*.so
 
 # Prerequisites
 *.d
