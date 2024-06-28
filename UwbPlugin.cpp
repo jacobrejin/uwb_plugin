@@ -815,7 +815,8 @@ private:
 
          // Create and send the ROS 2 pose with covariance message
         geometry_msgs::msg::PoseWithCovarianceStamped poseMsg;
-        poseMsg.header.frame_id = this->tagFrameId;
+        // poseMsg.header.frame_id = this->tagFrameId;
+        poseMsg.header.frame_id = "world";
         poseMsg.header.stamp = this->rosNode->get_clock()->now();
 
         // Set the pose, this->tagParentPose will have the updates pose as it is being updated in the postupdate
