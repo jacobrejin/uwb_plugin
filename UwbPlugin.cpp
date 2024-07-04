@@ -160,9 +160,9 @@ private:
         this->rosNode->set_parameter(rclcpp::Parameter("use_sim_time", true));
 
         // msg for the markers, line of LOS
-        this->markerPub = this->rosNode->create_publisher<visualization_msgs::msg::Marker>("LOS_marker", 10);
+        this->markerPub = this->rosNode->create_publisher<visualization_msgs::msg::Marker>("uwb/LOS_marker", 10);
         // msg for the pose of the robot with covariance
-        this->posePub = this->rosNode->create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("pose", 10);
+        this->posePub = this->rosNode->create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("uwb/pose", 10);
         // msg for publishing the static pose of the beacons
         // Create a publisher with transient local durability QoS
         rclcpp::QoS qos(rclcpp::KeepLast(10));
